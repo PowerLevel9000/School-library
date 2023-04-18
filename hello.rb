@@ -1,0 +1,2 @@
+hello = 'ruby'
+puts hello
