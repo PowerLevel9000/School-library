@@ -7,7 +7,7 @@ class Person
     @parent_permission = parent_permission
   end
   
-  def can_use_services
+  def can_use_services?
     return of_age
   end
 
@@ -22,8 +22,8 @@ class Person
   end
 end
 
-adarsh = Person.new("Adarsh", 21)
-can_use_services = adarsh.can_use_services
+adarsh = Person.new("Adarsh", 21, parent_permission:false )
+can_use_services = adarsh.can_use_services?
 puts can_use_services, adarsh.age, adarsh.id, adarsh.parent_permission? ,adarsh.name 
 
 
