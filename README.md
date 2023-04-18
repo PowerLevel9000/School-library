@@ -79,8 +79,6 @@ In this project i utilize my skills and knowledge to create this project
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **Create persons**
 - **Create Students**
 - **And relate everything with som relation**
