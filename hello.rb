@@ -1,2 +1,0 @@
-hello = 'ruby'
-puts hello

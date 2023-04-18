@@ -75,8 +75,6 @@ In this project i utilize my skills and knowledge to create this project
   </ul>
 </details>
 
-<details>
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
@@ -151,8 +149,6 @@ under construction ...............
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 👤 **Adarsh Pathak**
 
