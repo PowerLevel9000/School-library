@@ -1,17 +1,18 @@
-require './nameable.rb'
+require './nameable'
 
 class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = rand(1..100)
     @name = name
     @age = age
     @parent_permission = parent_permission
   end
-  
-  def correct_name 
+
+  def correct_name
     @name
   end
 
@@ -40,7 +41,7 @@ puts can_use_services, adarsh.age, adarsh.id, adarsh.parent_permission?, adarsh.
 #  we can't find use of_age since it is private funtion so below line give you the error
 # puts of_age?
 
-# Again this could raise a error 
+# Again this could raise a error
 begin
   puts adarsh.correct_name
 rescue NotImplementedError => e

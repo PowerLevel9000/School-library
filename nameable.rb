@@ -5,7 +5,7 @@ class Nameable
 end
 puts '########################## namable.rb file #############################'
 
-name1 = Nameable.new()
+name1 = Nameable.new
 # this will raise a error so we will use error handling here
 
 begin
