@@ -11,7 +11,7 @@ class Student < Person
     '¯(ツ)/¯'
   end
 end
+puts '########################## Students ruby file #############################'
 
 akash = Student.new(16, 12, 'Akash')
-puts '########################## Students ruby file #############################3'
 puts akash.name, akash.can_use_services?, akash.parent_permission?, akash.classroom, akash.play_hooky

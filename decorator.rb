@@ -8,14 +8,16 @@ class Decorator < Nameable
 
     def correct_name
         #current initial corrected namable
-        puts "################# current Decorator corrected namable #######################"
+        puts "### current Decorator corrected namable ###"
         @nameable
         # parent namable
         super()
-        puts "################# parent corrected namable #######################"
+        puts "### parent corrected namable ###"
         @namable
     end
 end
+
+puts "########################## decorator.rb file ######################"
 decorator1 = Decorator.new("Adarsh")
 
 # Again this could raise a error 

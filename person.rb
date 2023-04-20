@@ -30,6 +30,9 @@ class Person < Nameable
   end
 end
 
+puts '########################## person.rb file #############################'
+
+
 adarsh = Person.new(21, 'Adarsh', parent_permission: false)
 can_use_services = adarsh.can_use_services?
 puts can_use_services, adarsh.age, adarsh.id, adarsh.parent_permission?, adarsh.name, adarsh.id

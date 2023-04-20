@@ -3,6 +3,7 @@ class Nameable
     raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
   end
 end
+puts '########################## namable.rb file #############################'
 
 name1 = Nameable.new()
 # this will raise a error so we will use error handling here
