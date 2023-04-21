@@ -1,7 +1,7 @@
 require './nameable'
 
 class Person < Nameable
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -10,6 +10,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def correct_name
@@ -17,32 +18,29 @@ class Person < Nameable
   end
 
   def can_use_services?
-    of_age
+    of_age? || @parent_permission
   end
 
   def parent_permission?
     @parent_permission
   end
 
+  # def rental
+  #   if @rental.empty?
+  #     "This person doesn't have any books."
+  #   else
+  #     @rental.map { |rental| rental.book.title }.join(', ')
+  #   end
+  # end
+
+  def add_rental(book, date)
+    rental = Rental.new(date, book, self)
+    @rental << rental
+  end
+
   private
 
-  def of_age
+  def of_age?
     @age >= 18
   end
-end
-
-puts '########################## person.rb file #############################'
-
-adarsh = Person.new(21, 'Adarsh', parent_permission: false)
-can_use_services = adarsh.can_use_services?
-puts can_use_services, adarsh.age, adarsh.id, adarsh.parent_permission?, adarsh.name, adarsh.id
-
-#  we can't find use of_age since it is private funtion so below line give you the error
-# puts of_age?
-
-# Again this could raise a error
-begin
-  puts adarsh.correct_name
-rescue NotImplementedError => e
-  puts e.message
 end
