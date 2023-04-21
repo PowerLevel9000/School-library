@@ -1,7 +1,7 @@
 require './nameable'
 
 class Person < Nameable
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rental
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -25,13 +25,13 @@ class Person < Nameable
     @parent_permission
   end
 
-  def rental
-    if @rental.empty?
-      "This person doesn't have any books."
-    else
-      @rental.map { |rental| rental.book.title }.join(', ')
-    end
-  end
+  # def rental
+  #   if @rental.empty?
+  #     "This person doesn't have any books."
+  #   else
+  #     @rental.map { |rental| rental.book.title }.join(', ')
+  #   end
+  # end
 
   def add_rental(book, date)
     Rental.new(date, book, self)

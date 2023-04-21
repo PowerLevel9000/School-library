@@ -24,4 +24,4 @@ puts mr_wick.title, mr_wick.author
 
 puts '################# Associations  puts obeservation 5 ##########################'
 rental1 = Rental.new('28-12-01', mr_wick, adarsh)
-puts adarsh.rental, rental1
+puts adarsh.rental, rental1.person.name, rental1.book.title
