@@ -1,5 +1,5 @@
-require './person.rb'
-require './book.rb'
+require './person'
+require './book'
 
 class Rental
   attr_accessor :date, :book, :person
@@ -8,7 +8,7 @@ class Rental
     @date = date
     @person = person
     @book = book
-    book.rental << self 
+    book.rental << self
     person.rental << self
   end
 end

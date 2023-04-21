@@ -14,4 +14,3 @@ class Decorator < Nameable
     @nameable
   end
 end
-
