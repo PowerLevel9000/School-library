@@ -13,6 +13,3 @@ class Teacher < Person
   end
 end
 
-adarsh_pro = Teacher.new('Adarsh Pro', 12, 'Sciennce And Maths')
-puts '################################ teacher.rb file ########################'
-puts adarsh_pro.name, adarsh_pro.can_use_services, adarsh_pro.specialization

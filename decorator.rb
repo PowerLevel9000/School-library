@@ -15,12 +15,3 @@ class Decorator < Nameable
   end
 end
 
-puts '########################## decorator.rb file ######################'
-decorator1 = Decorator.new('Adarsh')
-
-# this could raise a error so rescue
-begin
-  puts decorator1.correct_name
-rescue NotImplementedError => e
-  puts e.message
-end

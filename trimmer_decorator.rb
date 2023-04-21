@@ -7,7 +7,3 @@ class Trimmer < Decorator
   end
 end
 
-puts '#################### trimmer_decorator.rb file ###########################'
-person = Person.new(22, 'maximilianus')
-capitalized_trimmed_person = Trimmer.new(person)
-puts capitalized_trimmed_person.correct_name
