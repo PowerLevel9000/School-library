@@ -8,7 +8,7 @@ require './rental'
 adarsh = Person.new(12, 'Adarsh', parent_permission: false)
 adarsh2 = Person.new(12, 'Adarsh', parent_permission: true)
 puts '################# person puts obesrvation 1 ############################'
-puts adarsh.name, adarsh.age, adarsh.can_use_services?, adarsh2.can_use_services?, adarsh.rental
+puts adarsh.name, adarsh.age, adarsh.can_use_services?, adarsh2.can_use_services?, adarsh.rentals
 
 puts '################# teacher puts obeservation 2 ##########################'
 teacher1 = Teacher.new(52, 'science', 'the imposter')
@@ -24,4 +24,4 @@ puts mr_wick.title, mr_wick.author
 
 puts '################# Associations  puts obeservation 5 ##########################'
 rental1 = Rental.new('28-12-01', mr_wick, adarsh)
-puts adarsh.rental, rental1.person.name, rental1.book.title
+puts adarsh.rentals, rental1.person.name, rental1.book.title
