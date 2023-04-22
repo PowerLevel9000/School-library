@@ -1,60 +1,51 @@
-require './app.rb'
+require './app'
 require 'readline'
 
-def ui
-  input = 0
-  app = App.new()
-  puts "===================================================================="
-  puts "********************* welcome to School Library ********************"
-  puts "===================================================================="
-  while input[-1].to_i != 7
-    puts "******* Select option ***********"
-    puts '1. List all book'
-    puts '2. List all person'
-    puts '3. Create person'
-    puts '4. Create book'
-    puts '5. Create rental'
-    puts '6. List all rentals for a given person ID'
-    puts '7. List all books'
-    userInput = Readline.readline("Enter you option : ", true);
-    input = userInput
-    case userInput[-1].to_i
-    when 1
-      app.list_all_books
-      puts ''
-      puts '////////////////////// task end ///////////////////////'
-      puts ''
-    when 2
-      app.list_all_person
-      puts ''
-      puts '////////////////////// task end ///////////////////////'
-      puts ''
-    when 3
-      app.create_a_person
-      puts ''
-      puts '////////////////////// task end ///////////////////////'
-      puts ''
-    when 4
-      app.create_a_book
-      puts ''
-      puts '////////////////////// task end ///////////////////////'
-      puts ''
-    when 5
-      app.create_rental
-      puts ''
-      puts '////////////////////// task end ///////////////////////'
-      puts ''
-    when 6
-      app.list_all_rentals_by_id
-      puts ''
-      puts '////////////////////// task end ///////////////////////'
-      puts ''
-    when 7
-      puts "thanks for using"
-    else
-      puts "choose a valid option 'try again'"
+class Ui_genrator
+  attr_reader :options
+
+  def initialize
+    @options = {
+      '1' => :list_all_books,
+      '2' => :list_all_person,
+      '3' => :create_a_person,
+      '4' => :create_a_book,
+      '5' => :create_rental,
+      '6' => :list_all_rentals_by_id,
+      '7' => :exit
+    }
+  end
+
+  def ui
+    app = App.new
+    putters
+    loop do
+      puts '******* Select option ***********'
+      puts '1. List all book'
+      puts '2. List all person'
+      puts '3. Create person'
+      puts '4. Create book'
+      puts '5. Create rental'
+      puts '6. List all rentals'
+      puts '7. Exit'
+      user_input = Readline.readline('Enter option: ', true)
+      option = options[user_input[-1]]
+      if option
+        app.send(option)
+        puts "\n// task end //\n\n"
+      else
+        puts 'Choose valid option.'
+      end
     end
   end
-end
-ui
 
+  private
+
+  def putters
+    puts '===================================================================='
+    puts '********************* welcome to School Library ********************'
+    puts '===================================================================='
+  end
+end
+school_library = Ui_genrator.new
+school_library.ui
