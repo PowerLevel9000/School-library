@@ -1,7 +1,7 @@
 require './app'
 require 'readline'
 
-class Ui_genrator
+class UiGenrator
   attr_reader :options
 
   def initialize
@@ -18,17 +18,12 @@ class Ui_genrator
 
   def ui
     app = App.new
+    breaker = 0
     putters
-    loop do
-      puts '******* Select option ***********'
-      puts '1. List all book'
-      puts '2. List all person'
-      puts '3. Create person'
-      puts '4. Create book'
-      puts '5. Create rental'
-      puts '6. List all rentals'
-      puts '7. Exit'
+    while breaker != 7
+      putter_ui
       user_input = Readline.readline('Enter option: ', true)
+      breaker = user_input.to_i
       option = options[user_input[-1]]
       if option
         app.send(option)
@@ -36,8 +31,6 @@ class Ui_genrator
       else
         puts 'Choose valid option.'
       end
-
-      break option == 7
     end
   end
 
@@ -48,6 +41,17 @@ class Ui_genrator
     puts '********************* welcome to School Library ********************'
     puts '===================================================================='
   end
+
+  def putter_ui
+    puts '******* Select option ***********'
+    puts '1. List all book'
+    puts '2. List all person'
+    puts '3. Create person'
+    puts '4. Create book'
+    puts '5. Create rental'
+    puts '6. List all rentals'
+    puts '7. Exit'
+  end
 end
-school_library = Ui_genrator.new
+school_library = UiGenrator.new
 school_library.ui

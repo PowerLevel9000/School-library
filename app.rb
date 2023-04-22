@@ -12,11 +12,10 @@ class App
     @rentals = []
     @person = []
   end
-  
+
   def exit
-		ui_creater('THANKS FOR USING OUR APPLICATION')
-		return nil
-	end
+    ui_creater('THANKS FOR USING OUR APPLICATION')
+  end
 
   def ui_creater(prop)
     puts "-----------------------------------------\n #{prop} \n-----------------------------------------"
