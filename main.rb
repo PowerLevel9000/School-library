@@ -16,7 +16,7 @@ class UiGenrator
     }
   end
 
-  def ui
+  def main
     app = App.new
     breaker = 0
     putters
@@ -54,4 +54,4 @@ class UiGenrator
   end
 end
 school_library = UiGenrator.new
-school_library.ui
+school_library.main
