@@ -36,6 +36,8 @@ class Ui_genrator
       else
         puts 'Choose valid option.'
       end
+
+      break option == 7
     end
   end
 
