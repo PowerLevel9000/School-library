@@ -18,7 +18,7 @@ class App
   end
 
   def ui_creater(prop)
-    puts "-----------------------------------------\n #{prop} \n-----------------------------------------"
+    puts "-----------------------------------------\n#{prop} \n-----------------------------------------"
   end
 
   def table_ui(table_title, line)
@@ -29,15 +29,14 @@ class App
 
   def list_all_books
     if @books.length.positive?
-      puts '----------------------------------'
+      line = ""
       @books.each do |book|
-        puts "#{book.title.upcase} by #{book.author.upcase}"
+        line += "#{book.title.upcase} by #{book.author.upcase} \n"
       end
-      puts '----------------------------------'
+      ui_creater(line)
     else
       ui_creater('we do not have any book please create one')
     end
-    nil
   end
 
   def list_all_person
@@ -46,13 +45,12 @@ class App
       lines = ""
       @person.each do |person|
         if person.respond_to?('specialization')
-          lines += "#{person.name.upcase}, he is #{person.age} years old, specilites in #{person.specialization}"
+          lines += "#{person.name.upcase}, he is #{person.age} years old, specilites in #{person.specialization}\n"
         else
           lines += "#{person.name.upcase}, he is #{person.age} years old, study in #{person.classroom.label} \n"
         end
-        ui_creater(lines)
       end
-
+      ui_creater(lines)
     else
       ui_creater("we got a problem we don't have anyone in our school")
     end
@@ -112,10 +110,12 @@ class App
 
     puts 'Select a book from the shelf: '
     puts ''
-    puts '=============== book self ==============='
+    title = "Book Shelf"
+    line = ""
     @books.each_with_index do |book, index|
-      puts "#{index} Title #{book.title}, authored by #{book.author} \n"
+      line += "#{index} Title #{book.title}, authored by #{book.author} \n"
     end
+    table_ui(title,line)
     choice_book = @books[gets.chomp.to_i]
     puts 'Select a person to rent the book by id: '
     puts '=============== persons ==============='
