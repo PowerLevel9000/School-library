@@ -123,6 +123,12 @@ under construction ...............
 - Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002)
 - LinkedIn: [Adarsh pathak](https://linkedin.com/in/PowerLevel)
 
+👤 **Recep Burak Otman**
+
+- GitHub: [@otmanTR](https://github.com/otmanTR)
+- Twitter: [@hotumanzade](https://twitter.com/hotumanzade)
+- LinkedIn: [Burak Otman](https://www.linkedin.com/in/burak-otman-88646443/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
