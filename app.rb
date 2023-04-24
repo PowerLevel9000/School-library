@@ -21,6 +21,10 @@ class App
     puts "-----------------------------------------\n#{prop} \n-----------------------------------------"
   end
 
+  def title_ui(title = '')
+    puts "******* Select an Option #{title} *******" 
+  end
+
   def table_ui(table_title, line)
     puts "========================== #{table_title} =========================="
     puts line
@@ -41,8 +45,8 @@ class App
   end
 
   def list_all_person
-    puts '****** List of persons *******'
     if @person.length.positive?
+      title = "List of persons"
       lines = ""
       @person.each do |person|
         if person.respond_to?('specialization')
@@ -51,14 +55,14 @@ class App
           lines += "#{person.name.upcase}, he is #{person.age} years old, study in #{person.classroom.label} \n"
         end
       end
-      ui_creater(lines)
+      table_ui(title, lines)
     else
       ui_creater("we got a problem we don't have anyone in our school")
     end
   end
 
   def create_a_person
-    puts '******* Select another option ***********'
+  title_ui
     puts '1. To create a student'
     puts '2. To create a teacher'
     print 'Enter the option : '
