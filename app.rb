@@ -51,9 +51,7 @@ class App < UiCreater
 
   def create_a_person
     title_ui
-    puts '1. To create a student'
-    puts '2. To create a teacher'
-    print 'Enter the option : '
+    create_a_person_ui
     person_category = gets.chomp.to_i
     if person_category < 1 or person_category > 2
       ui_creater('invalid option for creating person')

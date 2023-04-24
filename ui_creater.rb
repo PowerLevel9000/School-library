@@ -12,4 +12,10 @@ class UiCreater
     puts line
     puts '========================== *************** =========================='
   end
+
+  def create_a_person_ui 
+    puts '1. To create a student'
+    puts '2. To create a teacher'
+    print 'Enter the option : '
+  end
 end
