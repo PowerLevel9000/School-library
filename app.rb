@@ -21,6 +21,12 @@ class App
     puts "-----------------------------------------\n #{prop} \n-----------------------------------------"
   end
 
+  def table_ui(table_title, line)
+    puts "========================== #{table_title} =========================="
+    puts line
+    puts "========================== *************** =========================="
+  end
+
   def list_all_books
     if @books.length.positive?
       puts '----------------------------------'
@@ -37,15 +43,15 @@ class App
   def list_all_person
     puts '****** List of persons *******'
     if @person.length.positive?
-      puts '-------------------------------------------------------------------------------------'
+      lines = ""
       @person.each do |person|
         if person.respond_to?('specialization')
-          puts "#{person.name.upcase}, he is #{person.age} years old, specilites in #{person.specialization} "
+          lines += "#{person.name.upcase}, he is #{person.age} years old, specilites in #{person.specialization}"
         else
-          puts "#{person.name.upcase}, he is #{person.age} years old, study in #{person.classroom.label}"
+          lines += "#{person.name.upcase}, he is #{person.age} years old, study in #{person.classroom.label} \n"
         end
+        ui_creater(lines)
       end
-      puts '-------------------------------------------------------------------------------------'
 
     else
       ui_creater("we got a problem we don't have anyone in our school")
