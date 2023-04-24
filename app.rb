@@ -115,18 +115,20 @@ class App
 
     puts 'Select a book from the shelf: '
     puts ''
-    title = "Book Shelf"
-    line = ""
+    title1 = "Book Shelf"
+    line1 = ""
     @books.each_with_index do |book, index|
-      line += "#{index} Title #{book.title}, authored by #{book.author} \n"
+      line1 += "#{index} Title #{book.title}, authored by #{book.author} \n"
     end
-    table_ui(title,line)
+    table_ui(title1,line1)
     choice_book = @books[gets.chomp.to_i]
     puts 'Select a person to rent the book by id: '
-    puts '=============== persons ==============='
+    title2 = "Persons"
+    line2 = ""
     @person.each_with_index do |person, index|
-      puts "#{index} #{person.name.upcase} with id #{person.id} and #{person.age} years old"
+      line2 += "#{index} #{person.name.upcase} with id #{person.id} and #{person.age} years old \n"
     end
+    table_ui(title2, line2)
     choice_person = @person[gets.chomp.to_i]
     print 'Enter date of rental to keep track of book : '
     date = gets.chomp
@@ -142,10 +144,11 @@ class App
   end
 
   def display_persons
-    puts '******* Select option i.e. person id ***********'
-    puts '========================== person ======================'
-    @person.each { |person| puts "ID: #{person.id}, Name: #{person.name.upcase} and Age #{person.age}" }
-    puts '========================== ******* ======================'
+    title_ui("i.e. person id")
+    title = "Person"
+    line = ""
+    @person.each { |person| line += "ID: #{person.id}, Name: #{person.name.upcase} and Age #{person.age} \n" }
+    table_ui(title, line)
   end
 
   def person_id_from_user_input
@@ -158,14 +161,15 @@ class App
   end
 
   def display_rentals_by_person(person)
-    puts "========================== rentals by #{person.name.upcase} ==============================="
+    title = "rentals by #{person.name.upcase}"
+    line =""
     if person&.rentals&.any?
       person.rentals.each do |item|
-        puts "Book: #{item.book.title.upcase} authored by #{item.book.author.upcase} on the date #{item.date}"
+        line += "Book: #{item.book.title.upcase} authored by #{item.book.author.upcase} on the date #{item.date} \n"
       end
     else
-      puts 'No rentals available at the moment'
+      line += 'No rentals available at the moment'
     end
-    puts '========================== ***************************************** ======================'
+    table_ui(title, line)
   end
 end
