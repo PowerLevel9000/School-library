@@ -29,11 +29,12 @@ class App
 
   def list_all_books
     if @books.length.positive?
+      title = 'Book Shelf'
       line = ""
       @books.each do |book|
         line += "#{book.title.upcase} by #{book.author.upcase} \n"
       end
-      ui_creater(line)
+      table_ui(title, line)
     else
       ui_creater('we do not have any book please create one')
     end
