@@ -25,14 +25,6 @@ class Person < Nameable
     @parent_permission
   end
 
-  # def rental
-  #   if @rental.empty?
-  #     "This person doesn't have any books."
-  #   else
-  #     @rental.map { |rental| rental.book.title }.join(', ')
-  #   end
-  # end
-
   def add_rental(book, date)
     rental = Rental.new(date, book, self)
     @rental << rental
