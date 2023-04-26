@@ -5,14 +5,15 @@ require_relative 'rental'
 require_relative 'teacher'
 require_relative 'classroom'
 require './ui_creater'
+require './data-controler/data_presever'
 
 class App < UiCreater
   def initialize
     super()
     @classroom = []
-    @books = []
-    @rentals = []
-    @person = []
+    @books = json_reader("books") || []
+    @rentals = json_reader("rentals") || []
+    @person = json_reader("person") || []
   end
 
   def exit
