@@ -168,3 +168,13 @@ class App < UiCreater
     table_ui(title, line)
   end
 end
+
+#-------------Display---------------------
+
+def hash_checker (object)
+if @object.length == 0 
+  return false
+  else
+    true
+  end
+end
