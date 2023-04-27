@@ -9,8 +9,5 @@ class Rental
     @date = date
     @person = person
     @book = book
-    book.rental << self
-    person.rentals << self
-    # add_rental_to_json
   end
 end

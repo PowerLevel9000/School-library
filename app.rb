@@ -11,17 +11,21 @@ class App < UiCreater
   attr_accessor :books, :rentals, :person
   def initialize
     super()
-    @classroom = []
-    @books = []
-    @rentals = []
-    @person = []
+    # @classroom = []
+    # @books = []
+    # @rentals = []
+    # @person = []
+    @classroom = data_loader("classroom")
+    @books = data_loader("books")
+    @rentals = data_loader("rentals")
+    @person = data_loader("person")
   end
 
   def exit_and_save
-    # File.write("./data-controler/data/books.json", JSON.pretty_generate(@books))
-    # File.write("./data-controler/data/person.json", JSON.pretty_generate(@person))
-    # File.write("./data-controler/data/rental.json", JSON.pretty_generate(@rental))
-    # File.write("./data-controler/data/classroom.json", JSON.pretty_generate(@classroom))
+    File.write("./data-controler/data/books.json", JSON.pretty_generate(@books))
+    File.write("./data-controler/data/person.json", JSON.pretty_generate(@person))
+    File.write("./data-controler/data/rentals.json", JSON.pretty_generate(@rentals))
+    File.write("./data-controler/data/classroom.json", JSON.pretty_generate(@classroom))
     ui_creater('THANKS FOR USING OUR APPLICATION')
   end
 
@@ -126,15 +130,15 @@ class App < UiCreater
     puts 'Select a book from the shelf: '
     puts ''
     book_table
-    choice_book = @books[gets.chomp.to_i]
-    puts 'Select a person to rent the book by id: '
+    choice_book = finder(@books)
+    puts 'Select a person to rent the book by index: '
     person_table
-    choice_person = @person[gets.chomp.to_i]
+    choice_person = finder(@person)
     print 'Enter date of rental to keep track of book : '
     date = gets.chomp
     rental = Rental.new(date, choice_book["title"], choice_person["name"])
     @rentals.push({"id" => choice_person["id"], "date" => date, "title" => choice_book["title"], "name" => choice_person["name"]})
-    ui_creater("#{rental.person.name} record for #{rental.book.title} has been created saved successfully")
+    ui_creater("#{rental.person} record for #{rental.book} has been created saved successfully")
   end
 
   def list_all_rentals_by_id
@@ -145,8 +149,6 @@ class App < UiCreater
     display_persons
     id = person_id_from_user_input
     display_rentals_by_person_id(id)
-   # person = find_person_by_id(id)
-   # display_rentals_by_person(person)
   end
 
   def display_persons
@@ -165,6 +167,22 @@ class App < UiCreater
 
   def find_person_by_id(id)
     @person.find { |item| item["id"] == id }
+  end
+
+  def display_rentals_by_person_id(id)
+    arr = []
+    @rentals.each {
+      |rental|
+      if rental["id"] == id
+        arr << rental
+      end
+    }
+    puts arr
+  end
+
+  def finder(arr)
+    i = gets.chomp.to_i
+    arr[i]
   end
 
   #def display_rentals_by_person(person)
@@ -199,13 +217,3 @@ end
 # }
 # puts r
 
-def display_rentals_by_person_id(id)
-  arr = []
-  @rentals.each {
-    |rental|
-    if rental["id"] == id
-      arr << rental
-    end
-  }
-  puts arr
-end
