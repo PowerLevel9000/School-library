@@ -11,6 +11,6 @@ class Rental
     @book = book
     book.rental << self
     person.rentals << self
-    add_rental_to_json
+    # add_rental_to_json
   end
 end

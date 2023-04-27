@@ -1,7 +1,6 @@
 require 'json'
 def add_book_to_json
   books_array = File.exist?("books.json") ? JSON.parse(File.read('books.json')) : []
-  books_array << { title: @title, author: @author}
   File.write('books.json', JSON.pretty_generate(books_array))
 end
 def add_person_to_json
