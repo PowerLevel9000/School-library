@@ -133,7 +133,7 @@ class App < UiCreater
     print 'Enter date of rental to keep track of book : '
     date = gets.chomp
     rental = Rental.new(date, choice_book["title"], choice_person["name"])
-    @rentals << {choice_person["id"], date, choice_book["title"], choice_person["name"]}
+    @rentals.push({"id" => choice_person["id"], "date" => date, "title" => choice_book["title"], "name" => choice_person["name"]})
     ui_creater("#{rental.person.name} record for #{rental.book.title} has been created saved successfully")
   end
 
@@ -144,8 +144,9 @@ class App < UiCreater
     end
     display_persons
     id = person_id_from_user_input
-    person = find_person_by_id(id)
-    display_rentals_by_person(person)
+    display_rentals_by_person_id(id)
+   # person = find_person_by_id(id)
+   # display_rentals_by_person(person)
   end
 
   def display_persons
@@ -156,6 +157,7 @@ class App < UiCreater
     table_ui(title, line)
   end
 
+
   def person_id_from_user_input
     print 'Enter person ID: '
     gets.chomp.to_i
@@ -165,18 +167,18 @@ class App < UiCreater
     @person.find { |item| item["id"] == id }
   end
 
-  def display_rentals_by_person(person)
-    title = "rentals by #{person["name"].upcase}"
-    line = ''
-    if person&.rentals&.any?
-      person.rentals.each do |item|
-        line += "Book: #{item["book"].title.upcase} authored by #{item["book"].author.upcase} on the date #{item["date"]} \n"
-      end
-    else
-      line += 'No rentals available at the moment'
-    end
-    table_ui(title, line)
-  end
+  #def display_rentals_by_person(person)
+   # title = "rentals by #{person["name"].upcase}"
+   #line = ''
+   # if person&.rentals&.any?
+   #   person.rentals.each do |item|
+    #    line += "Book: #{item["book"].title.upcase} authored by #{item["book"].author.upcase} on the date #{item["date"]} \n"
+    # end
+   # else
+    #  line += 'No rentals available at the moment'
+   # end
+   # table_ui(title, line)
+ # end
 end
 
 #-------------Display---------------------
@@ -196,3 +198,14 @@ end
 #   end
 # }
 # puts r
+
+def display_rentals_by_person_id(id)
+  arr = []
+  @rentals.each {
+    |rental|
+    if rental["id"] == id
+      arr << rental
+    end
+  }
+  puts arr
+end
