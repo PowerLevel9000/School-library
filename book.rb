@@ -8,7 +8,6 @@ class Book
     @title = title
     @author = author
     @rental = []
-    # add_book_to_json
   end
 
   def add_rental(person, date)

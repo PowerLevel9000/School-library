@@ -12,7 +12,6 @@ class Person < Nameable
     @age = age
     @parent_permission = parent_permission
     @rentals = []
-    # add_person_to_json
   end
 
   def correct_name

@@ -30,5 +30,12 @@
     "age": "49",
     "specialization": "Allrounder",
     "name": "Akash"
+  },
+  {
+    "id": 76,
+    "age": "22",
+    "classroom": "12",
+    "name": "student",
+    "parent_permission": true
   }
 ]

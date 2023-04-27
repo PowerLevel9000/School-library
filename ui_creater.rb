@@ -19,15 +19,27 @@ class UiCreater
     puts '2. To create a teacher'
     print 'Enter the option : '
   end
-  
+
   def data_loader(file)
-    if File.exist?("./data-controler/data/#{file}.json")
-        File.open("./data-controler/data/#{file}.json", 'r') do |f|
-        data = JSON.parse(f.read)
-        return data
-      end
-    else
-      return []
+    return [] unless File.exist?("./data-controler/data/#{file}.json")
+
+    File.open("./data-controler/data/#{file}.json", 'r') do |f|
+      data = JSON.parse(f.read)
+      return data
     end
+  end
+
+  def finder(arr)
+    i = gets.chomp.to_i
+    arr[i]
+  end
+
+  def book_table
+    title1 = 'Book Shelf'
+    line1 = ''
+    @books.each_with_index do |book, index|
+      line1 += "#{index} Title #{book['title'].upcase}, authored by #{book['author'].upcase} \n"
+    end
+    table_ui(title1, line1)
   end
 end
