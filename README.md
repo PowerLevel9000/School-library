@@ -93,6 +93,12 @@ Install this project with:
 
 for now you don't need any installation to run project if you already followed [Prerequisites](#prerequisites)
 
+and 
+```
+bundel install
+
+```
+
 ### Usage
 
 To run the project, execute the following command:
@@ -108,7 +114,11 @@ ruby main.rb
 
 To run tests, run the following command:
 
-testing will be here soon 
+
+```
+rspec spec
+
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
