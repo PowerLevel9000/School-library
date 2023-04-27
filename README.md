@@ -13,13 +13,11 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -93,23 +91,32 @@ Install this project with:
 
 for now you don't need any installation to run project if you already followed [Prerequisites](#prerequisites)
 
+and 
+```
+bundel install
+
+```
+
 ### Usage
 
 To run the project, execute the following command:
 
 you can use it for you library purpose 
+run following commands in you `terminal` in root `dir`
+```
+ruby main.rb
+
+```
 
 ### Run tests
 
 To run tests, run the following command:
 
-under construction ..........
 
-### Deployment
+```
+rspec spec
 
-You can deploy this project using:
-
-under construction ...............
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

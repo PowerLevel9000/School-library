@@ -1,0 +1,41 @@
+[
+  {
+    "id": 25,
+    "age": "17",
+    "classroom": "12",
+    "name": "Good Student",
+    "parent_permission": true
+  },
+  {
+    "id": 42,
+    "age": "21",
+    "classroom": "10",
+    "name": "bad Student",
+    "parent_permission": false
+  },
+  {
+    "id": 60,
+    "age": "42",
+    "specialization": "ruby",
+    "name": "Adarsh"
+  },
+  {
+    "id": 26,
+    "age": "45",
+    "specialization": "javaScript",
+    "name": "burak"
+  },
+  {
+    "id": 56,
+    "age": "49",
+    "specialization": "Allrounder",
+    "name": "Akash"
+  },
+  {
+    "id": 76,
+    "age": "22",
+    "classroom": "12",
+    "name": "student",
+    "parent_permission": true
+  }
+]

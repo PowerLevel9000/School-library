@@ -1,5 +1,6 @@
 require './person'
 require './book'
+require './data-controler/data_presever'
 
 class Rental
   attr_accessor :date, :book, :person
@@ -8,7 +9,5 @@ class Rental
     @date = date
     @person = person
     @book = book
-    book.rental << self
-    person.rentals << self
   end
 end

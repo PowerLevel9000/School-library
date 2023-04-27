@@ -12,7 +12,7 @@ class UiGenrator
       '4' => :create_a_book,
       '5' => :create_rental,
       '6' => :list_all_rentals_by_id,
-      '7' => :exit
+      '7' => :exit_and_save
     }
   end
 
