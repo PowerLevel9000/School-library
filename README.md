@@ -98,18 +98,17 @@ for now you don't need any installation to run project if you already followed [
 To run the project, execute the following command:
 
 you can use it for you library purpose 
+run following commands in you `terminal` in root `dir`
+```
+ruby main.rb
+
+```
 
 ### Run tests
 
 To run tests, run the following command:
 
-under construction ..........
-
-### Deployment
-
-You can deploy this project using:
-
-under construction ...............
+testing will be here soon 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
