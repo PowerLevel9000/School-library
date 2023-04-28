@@ -14,4 +14,10 @@ describe "#initialize" do
     end
 end
 
+describe "#can_use_services?" do
+    it "check teacher can use service?" do
+        expect(teacher.can_use_services?).to eql(true)
+    end
+end
+
 end
