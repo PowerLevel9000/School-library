@@ -93,7 +93,7 @@ for now you don't need any installation to run project if you already followed [
 
 and 
 ```
-bundel install
+bundle install
 
 ```
 
