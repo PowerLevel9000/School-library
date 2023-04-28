@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Student do
 let(:student) { Student.new(17, 'Web Dev', 'Berkay', parent_permission: true)}
-#let(:classroom) {Classroom.new('Web Dev')}
 
 describe "#initialize" do
     it "sets the students age, classroom, name and parent_permission" do

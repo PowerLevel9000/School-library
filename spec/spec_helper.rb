@@ -1,4 +1,5 @@
 require './book'
+require './teacher'
 require './person'
 require './student'
 require 'yaml'
