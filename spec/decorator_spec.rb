@@ -7,6 +7,6 @@ describe Decorator do
     end
 
     it 'check correct_name shows nameable' do
-        expect(nameable.correct_name).to eql('Burak otman')
+        expect(decorator.correct_name).to eql('burak otman')
     end
 end
