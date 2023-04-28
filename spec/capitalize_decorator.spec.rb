@@ -5,3 +5,4 @@ describe Capitalize do
     it "return capitalize nameable" do
         expect(correct_name(name)).to eq('BURAK')
     end
+end
