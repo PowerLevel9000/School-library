@@ -1,4 +1,5 @@
 require './book'
+require './classroom'
 require './teacher'
 require './person'
 require './student'
